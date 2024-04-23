@@ -1,24 +1,25 @@
 import csv
-from services.account_management import get_balance_
+from services.account_management import *
+from random import randint
 
 
 class Accaunt:
-    def __init__(self, user_id, name, currency):
-        self.account_id = user_id
+    def __init__(self, user_login, name=None, currency=None):
+        self.user = user_login
         self.name = name
         self.currency = currency
-        self.balance = 0
 
-    def add_income(self, amount):
-        pass
+    def create_account(self):
+        create_account(self.user, self.name, self.currency)
 
-    def add_expense(self, amount):
-        pass
+    def add_income(self, account_id, amount):
+        income_account(account_id, amount)
 
-    def get_balance(self):
-        self.balance = get_balance_(self.account_id, self.name)
-        return self.balance
+    def add_expense(self, account_id, amount):
+        expense_account(account_id, amount)
 
-    def transfer(self, other_account, amount):
-        pass
+    def transfer(self, account_id, other_account, amount):
+        transfer_account(account_id, other_account, amount)
 
+    def delete_account(self, account_id):
+        delete_account(account_id)

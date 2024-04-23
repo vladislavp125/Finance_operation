@@ -10,6 +10,7 @@ class User:
         self.auth = None
 
     def register(self):
+
         authentication.register(self.username, self.password, self.email)
         self.auth = 1
 
