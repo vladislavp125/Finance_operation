@@ -1,5 +1,4 @@
 import asyncio
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -17,6 +16,3 @@ async def get_currency():
 
     currency = str(convert[0].text).replace(",", ".")
     return currency
-
-c = (asyncio.run(get_currency()))
-

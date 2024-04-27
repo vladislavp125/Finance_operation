@@ -13,13 +13,13 @@ class Accaunt:
         create_account(self.user, self.name, self.currency)
 
     def add_income(self, account_id, amount):
-        income_account(account_id, amount)
+        income_account(account_id, amount, self.user)
 
     def add_expense(self, account_id, amount):
-        expense_account(account_id, amount)
+        expense_account(account_id, amount, self.user)
 
     def transfer(self, account_id, other_account, amount):
-        transfer_account(account_id, other_account, amount)
+        transfer_account(account_id, other_account, amount, self.user)
 
     def delete_account(self, account_id):
-        delete_account(account_id)
+        delete_account(account_id, self.user)

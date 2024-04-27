@@ -1,4 +1,4 @@
-from utils.logger import *
+from utils.logger import enter_user_log, register_user_log
 import json
 
 
@@ -31,7 +31,7 @@ def pass_try(login, password):
         return True
 
 
-@enter_user
+@enter_user_log
 def log_in(login, password):
     try:
         if pass_try(login, password):
@@ -51,6 +51,7 @@ def logout(auth):
     return auth
 
 
+@register_user_log
 def register(login, password, email):
     password_h = hash_pass(str(password))
     try:
@@ -72,7 +73,5 @@ def register(login, password, email):
         with open("data/users_data.json", "w") as f:
             new_user = [{f"login": login, "password": password_h, "email": email}]
             json.dump(new_user, f, indent=3)
+            return True
 
-# register(123, 123, "vladislavp")
-# register("ffff", 123, "vladislavp")
-# log_in("ffff", 123)

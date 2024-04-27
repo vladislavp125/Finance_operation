@@ -10,12 +10,10 @@ class User:
         self.auth = None
 
     def register(self):
-
-        authentication.register(self.username, self.password, self.email)
-        self.auth = 1
+        if authentication.register(self.username, self.password, self.email) is None:
+            return None
+        else:
+            self.auth = 1
 
     def login(self):
         self.auth = authentication.log_in(self.username, self.password)
-
-    def update_profile(self):
-        pass
