@@ -1,6 +1,6 @@
 import time
 from functools import wraps
-from utils.file_hendler import *
+from utils.file_handler import *
 
 
 def format_time():

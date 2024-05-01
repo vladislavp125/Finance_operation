@@ -1,4 +1,4 @@
-from utils.file_hendler import *
+from utils.file_handler import *
 from models.account import Accaunt
 import random
 import json
